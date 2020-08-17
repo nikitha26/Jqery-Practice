@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="res">
+
+    </div>
+    
+</body>
+<script>
+    var user = {
+       "firstName":"john",
+       "lastName":"smit",
+       "id":101,
+       "address":"Hyderabad"
+   } 
+   //Add new property
+   user["gender"] = "Male";
+   //Add new value to the previous key
+   user["address"] = "delhi"
+   //Delete key and value 
+   delete user['id']
+
+   var result = '';
+   //Access the obj properites.
+   result += "FirstName:"+user.firstName +"</br>";
+   result += "LastName:"+user.lastName +"</br>";
+   result += "Id:"+user.id +"</br>";
+   result += "address:"+user.address +"</br>";
+   result += "Gender:"+user.gender +"</br>";
+   $('#res').html(result)
+
+   //Convert string to obj and obj to string.
+   //console.log(user.firstName)
+   // var result = JSON.stringify(details)
+   // console.log(result)
+   // var str = '{"firstName":"john","lastName":"smit","id":101}'
+   // console.log(JSON.parse(str))
+
+
+   var person = [{
+       "fname":"roy",
+       "lname":"rock",
+   }];
+
+   var obj = {
+       "fname":"ram",
+       "lname":"simk",
+   }
+   person.push(obj)
+   //console.log(person[1].fname)
+   //console.log(person.pop())
+   //console.log(person)
+</script>
+</html>
