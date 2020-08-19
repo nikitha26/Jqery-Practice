@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $('#button1').on('click' , function(){
+               $('ul').append("<li>Home</li>");
+           })
+        $('#button2').delegate('click',function(){
+            $('li').remove()
+        })  
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="Add New Item" id="button1">
+    <input type="button" value="Delete Item" id="button2">
+    <ul>
+
+    </ul>
+    
+</body>
+</html>

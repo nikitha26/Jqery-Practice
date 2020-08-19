@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .right{
+            color:blue;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+        // $('div').mousedown(function(){
+        //     alert("mousedown event occured")
+        // })
+
+        // $('#div1').mouseenter(function(){
+        //    $('#div1').css('background-color' , 'blue')
+        //  });
+        //  $('#div1').mouseleave(function(){
+        //    $('#div1').css('background-color' , 'red')
+        //  });
+        //  $('#out').mouseout(function(){
+        //    $('#out').css('background-color' , 'purple')
+        //  })
+        $('#right').contextmenu(function(){
+            $('#right').toggleClass('right')
+        })
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">
+        Click Here.
+    </div>
+    <br><br><br>
+    <div id="out">
+        Mouseout.
+    </div><br><br><br>
+    <div id="right">
+        Rightclick
+    </div>
+</body>
+</html>
