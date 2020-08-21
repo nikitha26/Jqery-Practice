@@ -3,24 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Get method</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <style>
+      div{
+       color:red;
+       width:200px;
+       height: 200px;
+       box-shadow: 2px 2px 3px silver;
+      
+      } -->
+    </style>
     <script>
       $(document).ready(function(){
-        $(function(){
-          $('#ajax').load("test.html",function(){
-            alert("Successfully loaded")
-          })
-        })
+       
+          $.ajax({
+            type:"Get",
+            url:'http://localhost:8000/',
+            headers: { 'Authorization': 'Bearer '+ 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwNjI2OTcyLCJqdGkiOiI5NGIyNWJjOTFmZGE0OTgyOWM3NTlhNjQ3NGE4M2JjOCIsInVzZXJfaWQiOjF9.6za1_7OXOM-msrq6P_EgOpAW3J6eX17UvHJlMs7dqOU'},
+            success:function(responsedata){
+              for(i=0;i<responsedata.length;i++)
+              {
+                var card = '<div class="col-lg-4"><div class="card"><div class="card-body"><h4 class="text">Id: '+responsedata[i].id+"</br>"+"Name :"+ responsedata[i].name+"</br>"+"Ph Number :"+ responsedata[i].number+'</h4></div></div></div>';
+                $('.row').append(card);
+                //console.log(responsedata[i])
+              }
+            }
+          }) 
+        
       })
     </script>
 </head>
 <body>
-    <!-- <div>
-        This is Ajax
-    </div> -->
-    <div id="ajax"></div>
     <!-- <input type="button" name="btn" value="Click me " id="btn1"> -->
-    
+    <!-- <div class="result">
+
+    </div> -->
+    <div class="container" id="result">
+    <div class="row">
+      
+    </div>
+  </div>
 </body>
 </html>
