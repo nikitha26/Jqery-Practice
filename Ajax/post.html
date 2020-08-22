@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Method </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+     <script>
+         $('document').ready(function(){
+             $('#btn').click(function(){
+                 var inpname = $('.name1').val()
+                 var inpnumber = $('.num1').val()
+                var inputvalues = {
+                    name: inpname,
+                    number: inpnumber,
+                };
+                //console.log(inputvalues.name)
+              $.ajax({
+                  url: 'http://127.0.0.1:8000/',
+                  type: 'POST',
+                  data: inputvalues,
+                  headers: { 'Authorization': 'Bearer '+ 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjAwNjI2OTcyLCJqdGkiOiI5NGIyNWJjOTFmZGE0OTgyOWM3NTlhNjQ3NGE4M2JjOCIsInVzZXJfaWQiOjF9.6za1_7OXOM-msrq6P_EgOpAW3J6eX17UvHJlMs7dqOU'},
+                  success:function(data){
+                      alert("Successfully Addeded")
+                  },
+                //   error:function(){
+                //      console.log("Error")
+                //   }
+              })
+             })
+         })
+     </script>
+</head>
+<body>
+    <h2>Post Method </h2>
+    <h3>Send Contact Using Post Method</h3>
+     <form action="">
+         <input type="text" placeholder="Enter Your Name" class="name1">
+         <input type="text" placeholder="Enter Your Number" class="num1">
+         <input type="button" name="btn" value="Submit" id="btn">
+     </form>
+    
+</body>
+</html>
